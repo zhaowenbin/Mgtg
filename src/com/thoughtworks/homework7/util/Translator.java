@@ -1,22 +1,78 @@
 package com.thoughtworks.homework7.util;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * translate everything in the galaxy
  * @author benny_zhao
  *
  */
 public class Translator {
-
 	
+	static final String END_INPUT_IDENTIFIER = "END";	//identifier to stop input
+	static List<String> tradeRules ;	//rules on the trade
+
+	/**
+	 * initialize trade rules 
+	 */
+	public static void initTradeRules() {
+
+		// press enter to end the line
+		tradeRules = new ArrayList<String>();
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					System.in));
+			String str = null;
+			System.out.println("tell me the rules to make a deal:");
+			for (int i = 1; i > 0; i++) {
+				str = br.readLine();
+				if(str.toUpperCase().equals(END_INPUT_IDENTIFIER)){
+					break;
+				}else{
+					tradeRules.add(str);
+				}
+			}
+			System.out.println(tradeRules.toString());
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
 	
 	/**
 	 * analyze the rules
 	 * short:unable to find the number-char mixed string
 	 * solution:get the first char which can be parsed to number and recursion
+	 * @param rule 
 	 */
-	public static void analyzeTradeRules(){
+	public static String analyzeTradeRules(String rule){
 		
+		// press enter to end the line
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					System.in));
+			String str = null;
+			System.out.println("tell me the rules to make a deal:");
+			for (int i = 1; i > 0; i++) {
+				str = br.readLine();
+				if(str.toUpperCase().equals(END_INPUT_IDENTIFIER)){
+					break;
+				}else{
+					tradeRules.add(str);
+				}
+			}
+			System.out.println(tradeRules.toString());
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
+		return rule;
 		
 	}
 	
@@ -70,7 +126,7 @@ public class Translator {
 	 * @return
 	 */
 	public static String trimAll(String dirtyStr){
-		return dirtyStr.replaceAll("[ |¡¡]", " ").trim();
+		return dirtyStr.replaceAll("[ |ï¿½ï¿½]", " ").trim();
 	}
 
 	

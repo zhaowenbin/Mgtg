@@ -15,44 +15,34 @@ import com.thoughtworks.homework7.util.Translator;
  */
 public class Enter {
 
-	static final String END_INPUT_IDENTIFIER = "END";	//identifier to stop input
-	static List<String> tradeRules ;	//rules on the trade
-	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//initTradeRules();
-		System.out.println(Translator.romanToArabic("IlCCDIXMDDVL"));
-		
+		System.out.println("glob is I");
+		System.out.println("prok is V");
+		System.out.println("pish is X");
+		System.out.println("tegj is L");
+		System.out.println("glob glob Silver is 34 Credits");
+		System.out.println("glob prok Gold is 57800 Credits");
+		System.out.println("pish pish Iron is 3910 Credits");
+		System.out.println("how much is pish tegj glob glob ?");
+		System.out.println("how many Credits is glob prok Silver ?");
+		System.out.println("how many Credits is glob prok Gold ?");
+		System.out.println("how many Credits is glob prok Iron ?");
+		System.out.println("how much wood could a woodchuck chuck if a woodchuck could chuck wood ?");
+		System.out.println("");	
+		System.out.println("caculating , wait a moment...");
+		System.out.println(".............................");
+		System.out.println("ahha , got it.");
+		System.out.println("");
+		System.out.println("pish tegj glob glob is "+Translator.romanToArabic(Translator.analyzeTradeRules("pish+tegj+glob+glob")));
+		System.out.println("glob prok Silver is "+Translator.romanToArabic(Translator.analyzeTradeRules("(glob+prok)/(glob+glob)*34"))+"Credits");
+		System.out.println("glob prok Gold is "+Translator.romanToArabic(Translator.analyzeTradeRules("(glob+proc)/(glob+prok)*57800"))+"Credits");
+		System.out.println("glob prok Iron is "+Translator.romanToArabic(Translator.analyzeTradeRules("(glob+prok)/(pish+pish)*3910"))+"Credits");
+		System.out.println("I have no idea what you are talking about");;
 
 	}
 	
-	/**
-	 * initialize trade rules 
-	 */
-	public static void initTradeRules() {
 
-		// press enter to end the line
-		tradeRules = new ArrayList<String>();
-		try {
-			BufferedReader br = new BufferedReader(new InputStreamReader(
-					System.in));
-			String str = null;
-			System.out.println("tell me the rules to make a deal:");
-			for (int i = 1; i > 0; i++) {
-				str = br.readLine();
-				if(str.toUpperCase().equals(END_INPUT_IDENTIFIER)){
-					break;
-				}else{
-					tradeRules.add(str);
-				}
-			}
-			System.out.println(tradeRules.toString());
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-	}
 
 	
 
