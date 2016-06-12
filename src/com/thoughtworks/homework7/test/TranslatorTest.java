@@ -11,6 +11,7 @@ public class TranslatorTest {
 	@Test
 	public void testRomanToArabic() {
 		//fail("Not yet implemented");
+		assertEquals(1944, Translator.romanToArabic("MCMXLIV"));
 		assertEquals(1903, Translator.romanToArabic("MCMIII"));
 	}
 
