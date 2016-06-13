@@ -4,7 +4,7 @@ import com.thoughtworks.homework7.util.Translator;
 
 /**
  * user interface
- * @author benny_zhao
+ * @author wbzhao
  *
  */
 public class Mgtg {
